@@ -1,28 +1,55 @@
+.contact form {
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .contact form div {
   display: flex;
+  gap: 15px; /* Added gap for better spacing */
+  flex-wrap: wrap; /* Allow wrapping of input fields on smaller screens */
 }
+
+.contact input, 
 .contact textarea {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  width: calc(50% - 15px); /* Adjusted width considering the gap */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
-.contact input {
-  margin-bottom: 20px;
-  margin-right: 10px;
+
+.contact textarea {
+  width: 100%; /* Full width for the textarea */
+  min-height: 150px;
+  resize: vertical;
+  margin-bottom: 15px;
 }
-.contact form {
-  padding: 30px;
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #007bff;
 }
+
+/* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   .contact h4 {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    font-size: 24px;
   }
+
   .contact form div {
     flex-direction: column;
   }
-  .contact input {
-    width: 100%;
+
+  .contact input, 
+  .contact textarea {
+    width: 100%; /* Full width on mobile */
+    margin-right: 0; /* Remove right margin for single-column layout */
+    margin-bottom: 15px; /* Consistent bottom margin */
   }
 }
